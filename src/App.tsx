@@ -41,6 +41,14 @@ function App() {
     setTasks(newTasks)
   }
 
+  const changeTaskStatus = (id: string, newIsDone: boolean) => {
+    setTasks(tasks.map(el => el.id === id ? {...el, isDone: newIsDone} : el))
+  }
+
+  const currentButton =(value: FilterTasksType)=>{
+    setFilter(value)
+  }
+
   return (
     <div className="App">
       <div className="container wrapper">
@@ -48,7 +56,9 @@ function App() {
           tasks={tasksForTodolist}
           filterTasks={setFilter}
           removeTask={removeTask}
-          addTask={(value) => addTask(value)} />
+          addTask={(value) => addTask(value)}
+          changeTaskStatus={changeTaskStatus}
+          currentButton={currentButton} />
       </div>
     </div>
   );

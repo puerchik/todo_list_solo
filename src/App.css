@@ -20,3 +20,19 @@ body {
 .todolist {
   margin-right: 45px;
 }
+
+.error {
+  border: red 5px solid;
+}
+
+.errorMessage {
+  color: red;
+}
+
+.activeFilter {
+  background-color: aquamarine;
+}
+
+.isDone {
+  opacity: 0.5;
+}
